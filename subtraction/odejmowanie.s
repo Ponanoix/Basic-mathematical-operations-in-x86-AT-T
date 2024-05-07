@@ -5,11 +5,11 @@ SYSEXIT = 1
 .section .data
 
 liczba1:
-	.ascii "046fde"
+	.ascii "b11fff"
 koniec_liczby1 = . - liczba1
 
 liczba2:
-	.ascii "f14256"
+	.ascii "d48277"
 koniec_liczby2 = . - liczba2
 
 .section .bss
@@ -101,11 +101,11 @@ powrot:
 	jmp odejmowanie
 koniec_dzielnej:
 	dec %dl
-	addb $0xf, liczba1(%ebx)
 	inc %ebx
+	addb $0xf, liczba1(%ebx)
 	cmp $0, %dl
 	jg koniec_dzielnej
-	je kontynuacja
+	je kontynuacja_po_zerach
 pozyczka_zero:
 	inc %dl
 	cmp $0, %ebx
@@ -124,6 +124,9 @@ nie_koniec_pamieci:
 	subb $1, liczba1(%ebx)
 	cmp $0, %dl
 	jg koniec_dzielnej
+	inc %ebx
+	jmp kontynuacja
+kontynuacja_po_zerach:
 	inc %ebx
 kontynuacja:
 	addb $0x10, liczba1(%ebx)
