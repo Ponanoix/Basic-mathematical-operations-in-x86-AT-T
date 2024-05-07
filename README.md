@@ -1,5 +1,5 @@
 # Basic-mathematical-operations-in-x86-AT-T
-Four programs used to calculate results of basic mathematical operations (written in x86 AT&T syntax, using 32-bit arhcitecture on a 64-bit device)
+Four programs used to calculate results of basic mathematical operations (written in x86 AT&T syntax, using 32-bit architecture on a 64-bit device)
 
 The following programs consist of:
 - dodawanie (addition)
